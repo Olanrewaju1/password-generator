@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<style>
+    body{
+        background-color: #333;
+        font-family: monospace;
+        color:#fff;
+
+    }
+
+    .wrapper{
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .container{
+        max-width: 800px;
+        min-height: 150px;
+        border:2px solid black;
+        margin:50px auto;
+        background:white;
+        color:#333;
+    }
+
+    header{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .passwordGenerated{
+        margin:20px;
+        font-size:20px;
+        font-family: monospace;
+        font-weight: bold;
+        color:black;
+    }
+
+    .btn{
+        padding:5px;
+      
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <header>Password Generator</header>
+        <div class="container">
+            <div class="passwordGenerated">
+
+            </div>
+            <button class="btn">Generate Password</button>
+        </div>
+    </div>
+    <script>
+       /* var capitalString = ["A","B","C","D","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+        var lowerString = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var numeric = [1,2,3,4,5,6,7,8,9,0];
+        var symbol = ["!","@","#","$","%","^","&","*"];*/
+
+        const passwordGenerated = document.querySelector('.passwordGenerated');
+        const button = document.querySelector('.btn');
+
+        const upperString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowerString = "abcdefghijklmnopqrstuvwxyz";
+        const symbol = "!@#$%^*";
+        const number = "1234567890";
+
+
+        button.onclick = () =>{
+           passwordGenerated.textContent= "Password Generated: " + upperString[Math.floor(Math.random() *(upperString.length - 1))] +
+           lowerString[Math.floor(Math.random() *(lowerString.length - 1))]+lowerString[Math.floor(Math.random() *(lowerString.length - 1))]
+           +lowerString[Math.floor(Math.random() *(lowerString.length - 1))]+lowerString[Math.floor(Math.random() *(lowerString.length - 1))]+
+           lowerString[Math.floor(Math.random() *(lowerString.length - 1))] + 
+           symbol[Math.floor(Math.random() *  (symbol.length - 1))] + 
+           number[Math.floor(Math.random()* (number.length - 1))];
+              
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
